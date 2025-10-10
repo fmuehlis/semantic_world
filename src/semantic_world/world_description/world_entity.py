@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import importlib
 import inspect
 import itertools
 from abc import ABC
@@ -326,6 +325,7 @@ class Body(KinematicStructureEntity, SubclassJSONSerializer):
         result["name"] = self.name.to_json()
         result["collision"] = self.collision.to_json()
         result["visual"] = self.visual.to_json()
+        result["index"] = self.index
         return result
 
     @classmethod
@@ -341,6 +341,7 @@ class Body(KinematicStructureEntity, SubclassJSONSerializer):
 
         result.collision = collision
         result.visual = visual
+        result.index = data["index"]
 
         return result
 
