@@ -158,3 +158,22 @@ class Wall(SemanticAnnotation):
         door = let(Door, self._world.semantic_annotations)
         query = an(entity(door), InsideOf(self.body, door.entry_way.region)() > 0.1)
         return query.evaluate()
+
+############################### subclasses to IsPerceivable and HasBody
+@dataclass(eq=False)
+class Cup(IsPerceivable, HasBody): ...
+
+@dataclass(eq=False)
+class Milk(IsPerceivable, HasBody): ...
+
+@dataclass(eq=False)
+class Sweets(IsPerceivable, HasBody): ...
+
+@dataclass(eq=False)
+class Salt(IsPerceivable, HasBody): ...
+
+@dataclass(eq=False)
+class Cereal(IsPerceivable, HasBody): ...
+
+@dataclass(eq=False)
+class Noodles(IsPerceivable, HasBody): ...
